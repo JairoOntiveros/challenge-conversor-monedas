@@ -15,7 +15,7 @@ public class APIService {
     private static final String URL = "https://v6.exchangerate-api.com/v6/";
 
     //para usar este programa reemplaza tu API aqui
-    private static final String API_KEY = ;
+    private static final String API_KEY = "2c37be83648e0d21be1357f3";
 
     private final Gson gson = new Gson();
 
@@ -34,11 +34,11 @@ public class APIService {
             ExchangeRateResponse resultado = gson.fromJson(response.body(), ExchangeRateResponse.class);
 
             if (resultado == null){
-                throw new RuntimeException("No se pudo obtener una tasa de conversion valida")
+                throw new RuntimeException("No se pudo obtener una tasa de conversion valida");
             }
 
             double resultadoConversion = cantidad* resultado.conversion_rate();
-            String fechaES = Utilidades.formatearFechaEnEspanol(resultado.time_last_update());
+            String fechaES = Utilidades.formatearFechaEnEspanol(resultado.time_last_update_utc());
 
             return new ConversionFinal(resultadoConversion,fechaES);
 

@@ -5,6 +5,6 @@ import java.util.Map;
 public record ExchangeRateResponse(String base_code,
                                    String target_code,
                                    double conversion_rate,
-                                   String time_last_update) {
+                                   String time_last_update_utc) {
 
 }
