@@ -68,14 +68,14 @@ public class Principal {
                 System.out.println("Ingrese la cantidad a convertir: ");
                 double cantidad = entrada.nextDouble();
                 if(cantidad < 0){
-                    System.out.println("La cantidad no puede sernegativa. Intente nuevamente");
+                    System.out.println("La cantidad no puede ser negativa. Intente nuevamente");
                     continue;
                 }
 
                 try{
                     ConversionFinal resultado = apiservice.Convertir(base,objetivo,cantidad);
                     System.out.println("\n=== Resultado de la Conversión ===");
-                    System.out.printf("De %s a %s: %.2f => %.2f\n", base, objetivo, cantidad, resultado.resultadoConversion());
+                    System.out.printf("De %s a %s: %.2f => %.8f\n", base, objetivo, cantidad, resultado.resultadoConversion());
                     System.out.println("Fecha de la tasa: " + resultado.fechaES() + "\n");
                 }catch (RuntimeException e){
                     System.out.println("Ocurrio un error: "+e.getMessage());
