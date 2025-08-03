@@ -15,7 +15,7 @@ public class APIService {
     private static final String URL = "https://v6.exchangerate-api.com/v6/";
 
     //para usar este programa reemplaza tu API aqui
-    private static final String API_KEY = "2c37be83648e0d21be1357f3";
+    private static final String API_KEY = "";
 
     private final Gson gson = new Gson();
 
